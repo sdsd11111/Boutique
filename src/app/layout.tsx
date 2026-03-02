@@ -26,8 +26,18 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
     apple: '/apple-icon.png',
+  },
+  verification: {
+    google: 'wNaCK0e-4LoUu-KpC-n5ubGyMFpZOADMkIU--6Po-IY',
+  },
+  alternates: {
+    canonical: 'https://naluzloja.com',
   },
 };
 
@@ -36,8 +46,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Naluz",
+    "url": "https://naluzloja.com",
+    "logo": "https://naluzloja.com/icon-512.png",
+    "sameAs": [
+      "https://www.instagram.com/naluz.loja",
+      "https://www.facebook.com/profile.php?id=61561081694294"
+    ]
+  };
+
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
