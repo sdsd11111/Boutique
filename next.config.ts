@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   turbopack: {
-    root: 'D:\\Abel paginas\\Gabinete\\web nueva',
+    root: __dirname,
   },
 };
 
