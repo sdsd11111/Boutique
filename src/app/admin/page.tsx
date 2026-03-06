@@ -184,7 +184,7 @@ const AdminPage = () => {
                         <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-4">
                             <Lock size={32} className="text-black" />
                         </div>
-                        <h1 className="text-3xl font-serif font-bold text-white uppercase tracking-widest">NALUZ ADMIN</h1>
+                        <h1 className="text-3xl font-serif font-bold text-white uppercase tracking-widest">LUMINA ADMIN</h1>
                     </div>
 
                     <form onSubmit={handleLogin} className="space-y-6">
@@ -195,7 +195,7 @@ const AdminPage = () => {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-gold outline-none transition-all"
-                                placeholder="Naluz"
+                                placeholder="Lumina"
                             />
                         </div>
                         <div>
@@ -370,7 +370,7 @@ const AdminPage = () => {
                                     {formData.image_filename && (
                                         <div className="relative w-20 h-20 rounded-xl overflow-hidden border border-gold/30 mt-2">
                                             <img
-                                                src={`/uploads/${formData.image_filename}`}
+                                                src={`/api/media/${formData.image_filename}`}
                                                 alt="Preview"
                                                 className="w-full h-full object-cover"
                                             />

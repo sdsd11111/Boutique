@@ -89,7 +89,7 @@ const Announcement = () => {
                                     {currentAnnouncement.image_filename ? (
                                         <div className="w-full aspect-[16/10] md:aspect-video overflow-hidden">
                                             <img
-                                                src={`/uploads/${currentAnnouncement.image_filename}`}
+                                                src={`/api/media/${currentAnnouncement.image_filename}`}
                                                 alt={currentAnnouncement.title}
                                                 className="w-full h-full object-cover"
                                             />
@@ -131,7 +131,7 @@ const Announcement = () => {
                                     <div className="flex flex-col gap-4 w-full">
                                         {currentIndex === 0 ? (
                                             <a
-                                                href={`/uploads/cesar-reyes-jaramillo-eu0t.vcf`}
+                                                href={`/api/media/cesar-reyes-jaramillo-eu0t.vcf`}
                                                 download="Lumina_Contacto.vcf"
                                                 className="w-full flex items-center justify-center gap-3 bg-rose hover:bg-rose/90 text-white py-4 md:py-5 rounded-2xl font-sans font-bold text-lg transition-all shadow-xl shadow-rose/30 hover:scale-[1.02] active:scale-[0.98]"
                                             >
@@ -140,7 +140,7 @@ const Announcement = () => {
                                             </a>
                                         ) : currentAnnouncement.pdf_filename && (
                                             <a
-                                                href={`/uploads/${currentAnnouncement.pdf_filename}`}
+                                                href={`/api/media/${currentAnnouncement.pdf_filename}`}
                                                 download
                                                 className="w-full flex items-center justify-center gap-3 bg-rose hover:bg-rose/90 text-white py-4 md:py-5 rounded-2xl font-sans font-bold text-lg transition-all shadow-xl shadow-rose/30 hover:scale-[1.02] active:scale-[0.98]"
                                             >
@@ -176,7 +176,7 @@ const Announcement = () => {
                             {currentAnnouncement.image_filename && (
                                 <div className="w-full h-20 md:h-32 overflow-hidden relative">
                                     <img
-                                        src={`/uploads/${currentAnnouncement.image_filename}`}
+                                        src={`/api/media/${currentAnnouncement.image_filename}`}
                                         alt={currentAnnouncement.title}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 shadow-inner"
                                     />
@@ -218,7 +218,7 @@ const Announcement = () => {
                                 <div className="flex gap-2 pt-1">
                                     {currentIndex === 0 ? (
                                         <a
-                                            href={`/uploads/cesar-reyes-jaramillo-eu0t.vcf`}
+                                            href={`/api/media/cesar-reyes-jaramillo-eu0t.vcf`}
                                             download="Lumina_Contacto.vcf"
                                             className="flex-1 flex items-center justify-center gap-1 bg-rose hover:bg-rose/90 text-white py-1.5 md:py-2.5 rounded-lg md:rounded-xl font-sans font-bold text-[10px] md:text-xs transition-all shadow-lg shadow-rose/10"
                                         >
@@ -228,7 +228,7 @@ const Announcement = () => {
                                         </a>
                                     ) : currentAnnouncement.pdf_filename && (
                                         <a
-                                            href={`/uploads/${currentAnnouncement.pdf_filename}`}
+                                            href={`/api/media/${currentAnnouncement.pdf_filename}`}
                                             download
                                             className="flex-1 flex items-center justify-center gap-1 bg-rose hover:bg-rose/90 text-white py-1.5 md:py-2.5 rounded-lg md:rounded-xl font-sans font-bold text-[10px] md:text-xs transition-all shadow-lg shadow-rose/10"
                                         >
