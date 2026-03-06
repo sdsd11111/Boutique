@@ -13,15 +13,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Naluz | Ilumina con Estilo",
-  description: "Transformamos espacios con diseño sofisticado y tecnología LED de vanguardia. La elegancia de Loja ahora tiene nombre propio.",
+  title: "Lumina | Beauty & Wellness",
+  description: "Experiencia premium de cuidado personal y bienestar en Loja. Tratamientos faciales, estilismo y armonía estética.",
   manifest: '/manifest.json',
-  metadataBase: new URL('https://naluzloja.com'),
+  metadataBase: new URL('https://luminaloja.com'),
   openGraph: {
-    title: "Naluz | Ilumina con Estilo",
-    description: "Transformamos espacios con diseño sofisticado y tecnología LED de vanguardia. La elegancia de Loja ahora tiene nombre propio.",
-    url: "https://naluzloja.com",
-    siteName: "Naluz",
+    title: "Lumina | Beauty & Wellness",
+    description: "Experiencia premium de cuidado personal y bienestar en Loja. Tratamientos faciales, estilismo y armonía estética.",
+    url: "https://luminaloja.com",
+    siteName: "Lumina",
     locale: "es_ES",
     type: "website",
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     google: 'wNaCK0e-4LoUu-KpC-n5ubGyMFpZOADMkIU--6Po-IY',
   },
   alternates: {
-    canonical: 'https://naluzloja.com',
+    canonical: 'https://luminaloja.com',
   },
 };
 
@@ -49,12 +49,11 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Naluz",
-    "url": "https://naluzloja.com",
-    "logo": "https://naluzloja.com/icon-512.png",
+    "name": "Lumina",
+    "url": "https://luminaloja.com",
+    "logo": "https://luminaloja.com/icon-512.png",
     "sameAs": [
-      "https://www.instagram.com/naluz.loja",
-      "https://www.facebook.com/profile.php?id=61561081694294"
+      "https://www.instagram.com/lumina.loja"
     ]
   };
 

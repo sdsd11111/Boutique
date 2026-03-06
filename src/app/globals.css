@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
-  --premium-gold: #D4AF37;
-  --amber-glow: #FFBF00;
-  --anthracite: #1A1A1A;
+  /* Warm blush canvas */
+  --background: #FFF5F6;
+  /* Deep charcoal with warm undertone */
+  --foreground: #3B2A2E;
+  /* Muted rose-gold for luxury accents */
+  --premium-gold: #C9956B;
+  /* Rich dusty rose — the primary beauty accent */
+  --accent-rose: #D4728C;
+  /* Deep berry for dark sections */
+  --anthracite: #3B2A2E;
+  /* Soft blush for card backgrounds */
+  --blush: #FDEAED;
+  /* Soft lavender for variety */
+  --lavender: #E8D5E0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-gold: var(--premium-gold);
-  --color-amber: var(--amber-glow);
+  --color-rose: var(--accent-rose);
   --color-anthracite: var(--anthracite);
+  --color-blush: var(--blush);
+  --color-lavender: var(--lavender);
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;

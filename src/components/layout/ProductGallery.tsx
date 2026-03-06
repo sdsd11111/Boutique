@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Sun, BatteryCharging, ShieldCheck, X, MessageCircle, ArrowRight, Gauge, Activity, Clock, MapPin, Plus } from 'lucide-react';
+import { Zap, Sun, BatteryCharging, ShieldCheck, X, MessageCircle, ArrowRight, Gauge, Activity, Clock, MapPin, Plus, Heart } from 'lucide-react';
 
 interface Product {
     id: number;
@@ -22,226 +22,100 @@ interface Product {
 const products: Product[] = [
     {
         id: 1,
-        category: "interior",
-        categoryLabel: "Iluminación de Interior",
-        title: "Lámparas y Apliques 3 Tonos",
-        slogan: "Versatilidad total",
-        description: "La solución ideal para la variabilidad lumínica de Loja. Alterna entre 3 tonos (3000K, 4000K, 6000K) para crear el ambiente perfecto en cada momento.",
-        image: "/images/product-1.webp",
-        price: "Naluz Premium",
+        category: "faciales",
+        categoryLabel: "Cuidado Facial",
+        title: "Limpieza Facial Profunda",
+        slogan: "Piel radiante y sana",
+        description: "Tratamiento revitalizante que elimina impurezas y devuelve la luminosidad natural a tu rostro usando productos orgánicos premium.",
+        image: "/images/service-1.webp",
+        price: "$45.00",
         specs: [
-            { label: "Tonos", value: "3000K / 4000K / 6000K", icon: <Sun size={14} /> },
-            { label: "Control", value: "Switch / App", icon: <Zap size={14} /> }
+            { label: "Duración", value: "60 min", icon: <Clock size={14} /> },
+            { label: "Tipo", value: "Todo tipo de piel", icon: <Heart size={14} /> }
         ]
     },
     {
         id: 2,
-        category: "industrial",
-        categoryLabel: "Iluminación Industrial",
-        title: "Bombilla LED BULLET (60W)",
-        slogan: "El estándar de oro",
-        description: "Ideal para grandes áreas y locales comerciales en Loja. Con 8000 lúmenes y una vida útil de 20,000 horas, rinde un 500% más que las tradicionales.",
-        image: "/images/product-11.webp",
-        price: "$12.50",
+        category: "estilismo",
+        categoryLabel: "Estilismo & Capilar",
+        title: "Corte & Peinado de Autor",
+        slogan: "Tu estilo, tu esencia",
+        description: "Transformamos tu look con técnicas de corte vanguardistas y un peinado que resalta tus mejores rasgos.",
+        image: "/images/service-2.webp",
+        price: "$35.00",
         specs: [
-            { label: "Flujo", value: "8000 Lúmenes", icon: <Zap size={14} /> },
-            { label: "Vida Útil", value: "20,000 Horas", icon: <Clock size={14} /> }
+            { label: "Servicio", value: "Corte + Secado", icon: <Zap size={14} /> },
+            { label: "Duración", value: "45-60 min", icon: <Clock size={14} /> }
         ],
         comparison: [
-            { label: "Potencia Real", naluz: "60W Bullet", others: "300W Incand." },
-            { label: "Flujo Lumínico", naluz: "8000 lm", others: "4200 lm" }
+            { label: "Acabado", naluz: "Premium Gloss", others: "Standard" },
+            { label: "Duración Peinado", naluz: "48h+", others: "12h" }
         ]
     },
     {
         id: 3,
-        category: "sostenible",
-        categoryLabel: "Energía Sostenible",
-        title: "Faroles y Reflectores Solares",
-        slogan: "Autonomía lumínica",
-        description: "Perfectos para jardines y exteriores en las nuevas urbanizaciones de Loja. Carga fotovoltaica automática para iluminación sin cables ni consumo eléctrico.",
-        image: "/images/product-10.webp",
-        price: "Eco-Ahorro",
+        category: "manicure",
+        categoryLabel: "Manicure & Pedicure",
+        title: "Spa de Uñas Premium",
+        slogan: "Detalles que enamoran",
+        description: "Cuidado integral para tus manos con esmaltado semipermanente de larga duración y exfoliación hidratante.",
+        image: "/images/service-3.webp",
+        price: "$25.00",
         specs: [
-            { label: "Carga", value: "Energía Solar", icon: <BatteryCharging size={14} /> },
-            { label: "Protección", value: "IP65 Waterproof", icon: <ShieldCheck size={14} /> }
+            { label: "Esmalte", value: "Gel de Larga Duración", icon: <ShieldCheck size={14} /> },
+            { label: "Incluye", value: "Exfoliación", icon: <Heart size={14} /> }
         ]
     },
     {
         id: 4,
-        category: "seguridad",
-        categoryLabel: "Componentes y Seguridad",
-        title: "Tomacorrientes Universales SCHUKO",
-        slogan: "Seguridad certificada",
-        description: "Protección total para tus instalaciones eléctricas en Loja contra cortocircuitos. Certificación nacional (15Amp, 125-250V).",
-        image: "/images/product-4.webp",
-        price: "$4.50",
+        category: "corporal",
+        categoryLabel: "Tratamientos Corporales",
+        title: "Masaje Relajante con Aroma",
+        slogan: "Desconexión absoluta",
+        description: "Elimina el estrés con nuestra terapia de masajes usando aceites esenciales que equilibran cuerpo y mente.",
+        image: "/images/service-4.webp",
+        price: "$60.00",
         specs: [
-            { label: "Amperaje", value: "15 Amperios", icon: <ShieldCheck size={14} /> },
-            { label: "Voltaje", value: "125-250V", icon: <Activity size={14} /> }
+            { label: "Técnica", value: "Sueco / Aroma", icon: <Activity size={14} /> },
+            { label: "Duración", value: "75 min", icon: <Clock size={14} /> }
         ]
     },
     {
         id: 5,
-        category: "led",
-        categoryLabel: "LED",
-        title: "Tira LED RGB 5m",
-        slogan: "Atmósfera total",
-        description: "Control remoto con 16 colores. Ideal para decoración y ambientes gamer.",
-        image: "/images/product-5.webp",
-        price: "$34.99",
+        category: "faciales",
+        categoryLabel: "Cuidado Facial",
+        title: "Hidratación Profunda",
+        slogan: "Adiós a la sequedad",
+        description: "Mascarilla de ácido hialurónico para una piel tersa y profundamente hidratada.",
+        image: "/images/service-5.webp",
+        price: "$40.00",
         specs: [
-            { label: "Longitud", value: "5 Metros", icon: <Activity size={14} /> },
-            { label: "Control", value: "Control Remoto IR", icon: <Zap size={14} /> }
+            { label: "Hidratación", value: "+80%", icon: <Activity size={14} /> },
+            { label: "Producto", value: "Hialurónico Pro", icon: <Zap size={14} /> }
         ]
     },
     {
         id: 6,
-        category: "interior",
-        categoryLabel: "Interior",
-        title: "Lámpara de Pared Moderna",
-        slogan: "Luz indirecta",
-        description: "Estilo nórdico para iluminación ambiental en pasillos y dormitorios.",
-        image: "/images/product-6.webp",
-        price: "$45.50",
+        category: "estilismo",
+        categoryLabel: "Estilismo",
+        title: "Hidratación Capilar",
+        slogan: "Brillo espejo",
+        description: "Tratamiento de keratina o colágeno para recuperar la vitalidad de tu cabello.",
+        image: "/images/service-6.webp",
+        price: "$55.00",
         specs: [
-            { label: "Tipo", value: "Aplique de Pared", icon: <Sun size={14} /> },
-            { label: "Acabado", value: "Madera / Metal", icon: <ShieldCheck size={14} /> }
-        ]
-    },
-    {
-        id: 7,
-        category: "led",
-        categoryLabel: "LED",
-        title: "Foco LED Inteligente",
-        slogan: "Inteligencia pura",
-        description: "Control por app, 9W, 800 lúmenes, luz blanca y cálida ajustable.",
-        image: "/images/product-7.webp",
-        price: "$19.99",
-        specs: [
-            { label: "Eficiencia", value: "Clase A+", icon: <Zap size={14} /> },
-            { label: "Switch", value: "Digital / App", icon: <Activity size={14} /> }
-        ]
-    },
-    {
-        id: 8,
-        category: "decoracion",
-        categoryLabel: "Decoración",
-        title: "Lámpara de Pie Arco",
-        slogan: "Símbolo de diseño",
-        description: "Diseño minimalista con brazo ajustable. Perfecta para lectura y confort en sala.",
-        image: "/images/product-8.webp",
-        price: "$79.99",
-        specs: [
-            { label: "Altura", value: "2.10m Ajustable", icon: <Activity size={14} /> },
-            { label: "Base", value: "Mármol Premium", icon: <ShieldCheck size={14} /> }
-        ]
-    },
-    {
-        id: 9,
-        category: "interior",
-        categoryLabel: "Interior",
-        title: "Luz para Espejo con Sensor",
-        slogan: "Precisión matutina",
-        description: "Ideal para baños. Sensor de movimiento y luz cálida. Evita encendidos innecesarios.",
-        image: "/images/product-9.webp",
-        price: "$65.00",
-        specs: [
-            { label: "Sensor", value: "Infrarrojo 3m", icon: <Activity size={14} /> },
-            { label: "Luz", value: "Natural 4000K", icon: <Sun size={14} /> }
-        ]
-    },
-    {
-        id: 10,
-        category: "exterior",
-        categoryLabel: "Exterior",
-        title: "Luz Solar para Jardín",
-        slogan: "Ecoeficiencia",
-        description: "Energía solar, carga automática. Ideal para caminos y jardines. Sin cables.",
-        image: "/images/product-10.webp",
-        price: "$29.99",
-        specs: [
-            { label: "Carga", value: "6h Sol / 12h Luz", icon: <BatteryCharging size={14} /> },
-            { label: "Ahorro", value: "100% Planilla", icon: <Zap size={14} /> }
-        ]
-    },
-    {
-        id: 11,
-        category: "led",
-        categoryLabel: "LED",
-        title: "Panel LED Empotrable",
-        slogan: "Perfil ultra delgado",
-        description: "30x30cm, 24W, luz blanca fría. Perfecto para techos modernos y oficinas.",
-        image: "/images/product-11.webp",
-        price: "$24.99",
-        specs: [
-            { label: "Potencia", value: "24W Pro", icon: <Zap size={14} /> },
-            { label: "Vida", value: "30,000 Horas", icon: <Clock size={14} /> }
-        ]
-    },
-    {
-        id: 12,
-        category: "decoracion",
-        categoryLabel: "Decoración",
-        title: "Lámpara de Mesa Vintage",
-        slogan: "Encanto industrial",
-        description: "Estilo industrial con pantalla de metal. Ajuste de intensidad para ambientes acogedores.",
-        image: "/images/product-12.webp",
-        price: "$59.99",
-        specs: [
-            { label: "Switch", value: "Dimmer Manual", icon: <Activity size={14} /> },
-            { label: "Estilo", value: "Retro Loft", icon: <Sun size={14} /> }
-        ]
-    },
-    {
-        id: 13,
-        category: "interior",
-        categoryLabel: "Interior",
-        title: "Lámpara de Piso Ajustable",
-        slogan: "Foco direccional",
-        description: "Brazo articulado, luz cálida. Ideal para salas y dormitorios.",
-        image: "/images/product-13.webp",
-        price: "$75.50",
-        specs: [
-            { label: "Movilidad", value: "3 Ejes Giro", icon: <Activity size={14} /> },
-            { label: "Bombilla", value: "LED Incluida", icon: <Zap size={14} /> }
-        ]
-    },
-    {
-        id: 14,
-        category: "exterior",
-        categoryLabel: "Exterior",
-        title: "Lámpara de Pared Exterior",
-        slogan: "Belleza urbana",
-        description: "Estilo moderno, resistente a la intemperie. Resalta tu fachada.",
-        image: "/images/product-14.webp",
-        price: "$69.99",
-        specs: [
-            { label: "Material", value: "Aluminio / ABS", icon: <ShieldCheck size={14} /> },
-            { label: "Protección", value: "IP54", icon: <ShieldCheck size={14} /> }
-        ]
-    },
-    {
-        id: 15,
-        category: "interior",
-        categoryLabel: "Interior",
-        title: "Lámpara Colgante Minimalista",
-        slogan: "Escandinavo puro",
-        description: "Diseño escandinavo en blanco. Perfecta para mesas de comedor y estudio.",
-        image: "/images/product-15.webp",
-        price: "$89.99",
-        specs: [
-            { label: "Color", value: "Blanco Mate", icon: <Sun size={14} /> },
-            { label: "Altura", value: "Regulable", icon: <Activity size={14} /> }
+            { label: "Tipo", value: "Recuperación", icon: <Heart size={14} /> },
+            { label: "Protección", value: "UVA/UVB", icon: <ShieldCheck size={14} /> }
         ]
     }
 ];
 
 const categories = [
     { id: "all", label: "Todos" },
-    { id: "interior", label: "Interior" },
-    { id: "industrial", label: "Industrial" },
-    { id: "sostenible", label: "Sostenible" },
-    { id: "seguridad", label: "Seguridad" }
+    { id: "faciales", label: "Faciales" },
+    { id: "estilismo", label: "Estilismo" },
+    { id: "manicure", label: "Uñas" },
+    { id: "corporal", label: "Corporal" }
 ];
 
 const ProductGallery = () => {
@@ -263,18 +137,18 @@ const ProductGallery = () => {
     };
 
     return (
-        <section id="productos" className="py-24 bg-black">
+        <section id="servicios" className="py-24 bg-background">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16 space-y-4">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        className="text-gold text-sm font-sans tracking-[0.3em] uppercase font-bold block"
+                        className="text-rose text-sm font-sans tracking-[0.3em] uppercase font-bold block"
                     >
-                        Excelencia en Iluminación
+                        Excelencia en Bienestar
                     </motion.span>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-white">
-                        Naluz: Suministros Eléctricos de <span className="text-gold italic">Élite</span>
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+                        Lumina: Servicios de Belleza de <span className="text-rose italic">Élite</span>
                     </h2>
                 </div>
 
@@ -285,8 +159,8 @@ const ProductGallery = () => {
                             key={cat.id}
                             onClick={() => handleTabChange(cat.id)}
                             className={`px-6 py-2 rounded-full font-sans text-sm font-bold transition-all border ${activeTab === cat.id
-                                ? 'bg-gold text-black border-gold shadow-[0_0_20px_rgba(212,175,55,0.3)]'
-                                : 'bg-transparent text-white/60 border-white/10 hover:border-gold/50'
+                                ? 'bg-gold text-white border-gold shadow-[0_0_20px_rgba(212,175,55,0.3)]'
+                                : 'bg-transparent text-foreground/40 border-rose/20 hover:border-gold/50'
                                 }`}
                         >
                             {cat.label}
@@ -307,7 +181,7 @@ const ProductGallery = () => {
                                 onClick={() => setSelectedProduct(product)}
                                 className="group relative cursor-pointer"
                             >
-                                <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/5 bg-anthracite/50 backdrop-blur-sm group-hover:border-gold/30 transition-all group-hover:shadow-[0_0_40px_rgba(212,175,55,0.1)]">
+                                <div className="relative aspect-square rounded-3xl overflow-hidden border border-rose/5 bg-white backdrop-blur-sm group-hover:border-gold/30 transition-all group-hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] shadow-sm">
                                     {/* Image */}
                                     <Image
                                         src={product.image}
@@ -321,15 +195,15 @@ const ProductGallery = () => {
                                     <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                                         <div className="flex items-center justify-between mb-2">
                                             <div className="flex items-center gap-2">
-                                                {product.specs[0].icon && <span className="text-gold">{product.specs[0].icon}</span>}
+                                                {product.specs[0].icon && <span className="text-rose">{product.specs[0].icon}</span>}
                                                 <span className="text-white font-mono text-xs font-bold">{product.specs[0].value}</span>
                                             </div>
-                                            {product.price && <span className="text-gold font-sans font-bold text-lg">{product.price}</span>}
+                                            {product.price && <span className="text-rose font-sans font-bold text-lg">{product.price}</span>}
                                         </div>
                                         <h4 className="text-xl font-serif font-bold text-white mb-2">{product.title}</h4>
                                         <div className="flex items-center justify-between">
                                             <p className="text-white/40 text-xs font-sans uppercase tracking-widest">{product.categoryLabel}</p>
-                                            <span className="text-gold/80 text-[10px] uppercase font-bold tracking-tighter group-hover:text-gold transition-colors">Ver Detalles</span>
+                                            <span className="text-rose/80 text-[10px] uppercase font-bold tracking-tighter group-hover:text-rose transition-colors">Ver Detalles</span>
                                         </div>
                                     </div>
 
@@ -429,13 +303,13 @@ const ProductGallery = () => {
 
                                 {/* Modal Content */}
                                 <div className="p-6 md:p-12 flex flex-col justify-center">
-                                    <span className="text-gold font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-2">
+                                    <span className="text-rose font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-2">
                                         {selectedProduct.categoryLabel}
                                     </span>
                                     <h3 className="text-2xl md:text-5xl font-serif font-bold text-white mb-2">
                                         {selectedProduct.title}
                                     </h3>
-                                    <p className="text-gold italic font-serif text-base md:text-lg mb-6 leading-none">"{selectedProduct.slogan}"</p>
+                                    <p className="text-rose italic font-serif text-base md:text-lg mb-6 leading-none">"{selectedProduct.slogan}"</p>
 
                                     <p className="text-white/70 font-sans text-sm md:text-base leading-relaxed mb-8">
                                         {selectedProduct.description}
